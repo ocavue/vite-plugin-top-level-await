@@ -73,6 +73,7 @@ function topLevelAwait(options) {
                 // This cause esbuild to throw an exception when there're top-level awaits in code
                 // Let's backup the original target and override the esbuild target with "esnext", which allows TLAs
                 buildTarget = config.build.target;
+                console.log("[DEBUG] config() config.build.target", config.build.target);
                 config.build.target = "esnext";
                 minify = !!config.build.minify;
                 assetsDir = config.build.assetsDir;
